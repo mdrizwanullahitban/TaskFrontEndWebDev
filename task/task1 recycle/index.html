@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RecycleRadar - Local Recycling Locator</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet CSS (Map library) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header>
+    <h1>RecycleRadar</h1>
+    <p>Find nearby recycling centers using an interactive map.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="material">Filter by material:</label>
+      <select id="material">
+        <option value="all">All</option>
+        <option value="plastic">Plastic</option>
+        <option value="paper">Paper</option>
+        <option value="metal">Metal</option>
+        <option value="ewaste">E-waste</option>
+        <option value="glass">Glass</option>
+      </select>
+
+      <button id="locateBtn">Use My Location</button>
+    </section>
+
+    <section class="layout">
+      <div id="map"></div>
+
+      <div class="sidebar">
+        <h2>Recycling Centers</h2>
+        <ul id="centerList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>College Mini Project • RecycleRadar</small>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

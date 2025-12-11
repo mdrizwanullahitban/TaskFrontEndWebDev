@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AquaSense - Water Conservation Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js for real-time graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>AquaSense</h1>
+    <p>Track daily water usage and get real-time insights.</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Log Today’s Water Usage (Liters)</h2>
+      <form id="usageForm">
+        <label>
+          Date:
+          <input type="date" id="dateInput" required />
+        </label>
+
+        <label>
+          Drinking & Cooking:
+          <input type="number" id="drinking" min="0" value="0" required />
+        </label>
+
+        <label>
+          Bathing:
+          <input type="number" id="bathing" min="0" value="0" required />
+        </label>
+
+        <label>
+          Washing (clothes / utensils):
+          <input type="number" id="washing" min="0" value="0" required />
+        </label>
+
+        <label>
+          Other usage:
+          <input type="number" id="other" min="0" value="0" required />
+        </label>
+
+        <button type="submit">Save Entry</button>
+      </form>
+      <p id="summary"></p>
+    </section>
+
+    <section class="chart-section">
+      <h2>Last 7 Entries</h2>
+      <canvas id="usageChart"></canvas>
+    </section>
+
+    <section class="table-section">
+      <h2>History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Total (L)</th>
+            <th>Drinking</th>
+            <th>Bathing</th>
+            <th>Washing</th>
+            <th>Other</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>College Mini Project • AquaSense</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
